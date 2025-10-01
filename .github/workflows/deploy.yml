@@ -10,6 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: Upload artifact for deployment
+        uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: site/**
 
       - name: Upload to Azure WebApp
         uses: azure/webapps-deploy@v2
